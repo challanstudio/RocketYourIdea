@@ -226,8 +226,9 @@ section[class="data_media"] .music_btn {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  animation: rotateImg 10s infinite linear;
   border: solid 1px var(--color-white-);
+  animation: rotateImg 10s infinite linear;
+  animation-play-state: paused;
 }
 
 .music_img_outlines {
@@ -261,12 +262,13 @@ section[class="data_media"] .music_btn {
 }
 
 .music_img_outlines div:last-child {
-  animation: lighting 2s infinite;
   box-shadow: var(--color-white-) 0px 0px 30px;
+  animation: rotateLeft 5s infinite linear, lighting 5s infinite;
+  animation-play-state: paused;
 }
 
-.animation_pause {
-  animation-play-state: paused;
+.animation_running {
+  animation-play-state: running !important;
 }
 
 @keyframes rotateImg {
@@ -285,9 +287,10 @@ section[class="data_media"] .music_btn {
     transform: rotate(-360deg);
   }
 }
+
 @keyframes lighting {
   0% {
-    box-shadow: var(--color-white-) 0px 0px 20px;
+    box-shadow: var(--color-white-) 0px 0px 30px;
   }
 
   55% {
@@ -295,7 +298,7 @@ section[class="data_media"] .music_btn {
   }
 
   100% {
-    box-shadow: var(--color-white-) 0px 0px 20px;
+    box-shadow: var(--color-white-) 0px 0px 30px;
   }
 }
 
