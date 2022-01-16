@@ -171,13 +171,153 @@ div[class="data"] section {
 }
 
 /* data - date */
-
-/* data - paint todo*/
-.paint_todo {
-  font-size: 1.5rem;
+section[class="data_date"],
+section[class="data_todo"] {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.paint_todo button i {
-  font-size: 1.5rem;
+section[class="data_date"] h1 {
+  font-size: 2rem;
+}
+
+section[class="data_date"] h1:nth-child(2) {
+  font-size: 3.5rem;
+}
+
+/* data - paint todo*/
+
+section[class="data_todo"] div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  vertical-align: middle;
+}
+section[class="data_todo"] div p {
+  font-size: 2rem;
+}
+
+section[class="data_todo"] div button {
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0;
+  color: var(--color-white-);
+}
+
+/* media  */
+section[class="data_media"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section[class="data_media"] .music_img_overlay,
+section[class="data_media"] .music_img_outlines,
+section[class="data_media"] .music_btn {
+  margin-top: 2rem;
+}
+
+.music_img_overlay {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: rotateImg 10s infinite linear;
+  border: solid 1px var(--color-white-);
+}
+
+.music_img_outlines {
+  position: absolute;
+  z-index: 1;
+  top: 19px;
+}
+
+.music_img_outlines div {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.music_img_outlines div:first-child {
+  width: 95px;
+  height: 95px;
+  border: solid 1px var(--color-white-);
+  border-style: dashed;
+  position: relative;
+}
+
+.music_img_outlines div:nth-child(2),
+.music_img_outlines div:last-child {
+  width: 125px;
+  height: 125px;
+  border: solid 1px var(--color-white-);
+  border-style: ridge;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+}
+
+.music_img_outlines div:last-child {
+  animation: lighting 2s infinite;
+  box-shadow: var(--color-white-) 0px 0px 30px;
+}
+
+.animation_pause {
+  animation-play-state: paused;
+}
+
+@keyframes rotateImg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateLeft {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes lighting {
+  0% {
+    box-shadow: var(--color-white-) 0px 0px 20px;
+  }
+
+  55% {
+    box-shadow: var(--color-white-) 0px 0px 10px;
+  }
+
+  100% {
+    box-shadow: var(--color-white-) 0px 0px 20px;
+  }
+}
+
+.music_btn {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.music_btn i {
+  cursor: pointer;
+}
+
+.music_img_overlay img {
+  width: 120%;
+}
+
+.music_info {
+  margin-top: 2rem;
+  text-align: center;
 }

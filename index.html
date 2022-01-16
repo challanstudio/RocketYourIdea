@@ -40,25 +40,40 @@
     </section>
     <div class="data">
       <section class="data_date">
-        <h1 id="dateJs" class="date">0월 0일 0요일</h1>
-        <h1 id="clockJs" class="clock">00:00</h1>
+        <h1 id="dateJs">0월 0일 0요일</h1>
+        <h1 id="clockJs">00:00</h1>
+        <h1 id="clockJs">0<i class="ri-celsius-line"></i> 맑음</h1>
       </section>
       <section class="data_todo">
-        <div class="paint_todo">
+        <div>
           <button>
             <i class="ri-flag-2-line"></i>
           </button>
-          <p>To do list</p>
+          <p>Idea</p>
         </div>
       </section>
       <section class="data_media">
-        <div class="music">
-          <div class="music_info">
-            <h4 class="music_info_title">title</h4>
-            <h4 class="music_info_artist">artist</h4>
-          </div>
-          <div class="music_button"></div>
+        <div class="music_img_overlay">
+          <img src="./asset/img/human1.jpg" alt="" />
         </div>
+        <div class="music_img_outlines">
+          <div class="music_img_outlines_1"></div>
+          <div class="music_img_outlines_2"></div>
+          <div class="music_img_outlines_3"></div>
+        </div>
+        <div class="music_btn">
+          <i class="ri-skip-back-fill"></i>
+          <i class="ri-play-fill"></i>
+          <i class="ri-skip-forward-fill"></i>
+        </div>
+        <div class="music_info">
+          <h4 id="music-title" class="music_info_title">title</h4>
+          <h4 id="music-artist" class="music_info_artist">artist</h4>
+        </div>
+        <audio
+          id="audio"
+          src="./asset/mp3/ES_BOOOM - Timothy Infinite.mp3"
+        ></audio>
       </section>
     </div>
     <!-- bg imgs -->
@@ -70,6 +85,7 @@
         <img src="./asset/img/human3.jpg" alt="" />
       </div>
     </div>
+    <script src="./js/audio.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>
