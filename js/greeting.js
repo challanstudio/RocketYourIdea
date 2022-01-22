@@ -6,7 +6,6 @@ const inputNewTodo = formNewTodo.querySelector("#new-todo");
 const greetingText = document.querySelector("#greeting_username h1");
 const rightPage = document.querySelector("#contents");
 const leftPage = document.querySelector("#greeting");
-const soundEnter = document.querySelector("#sound-enter");
 const HIDDEN_CLASSNAME = "hidden";
 const KEY_NAME = "name";
 const now = new Date();
@@ -17,7 +16,6 @@ function onSubmit(e) {
   const username = inputUserName.value;
   localStorage.setItem(KEY_NAME, username);
   showInputTodo(username);
-  soundEnter.play();
 }
 
 // 뉴투두 폼보여주기,인삿말
@@ -28,7 +26,6 @@ function greeting() {
   document.body.classList.add("grid_body");
   document.body.classList.remove(HIDDEN_CLASSNAME);
   rightPage.classList.remove(HIDDEN_CLASSNAME);
-  soundEnter.volume = 0.25;
 }
 
 // 인삿말
