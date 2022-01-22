@@ -1,5 +1,5 @@
-const TodayIs = document.getElementById("dateJs");
-const clock = document.getElementById("clockJs");
+const TodayIs = document.querySelector("#greeting_date span:first-child");
+const clock = document.querySelector("#greeting_date span:last-child");
 function nowClock() {
   const now = new Date();
   const month = String(now.getMonth());
@@ -7,11 +7,23 @@ function nowClock() {
   const day = String(now.getDay());
   const hours = String(now.getHours()).padStart(2, "0");
   const minutes = String(now.getMinutes()).padStart(2, "0");
-  const nameOfDay = ["일", "월", "화", "수", "목", "금", "토"];
+  const nameOfDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const nameOfMonth = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Now",
+    "Dec",
+  ];
   clock.innerText = `${hours}:${minutes}`;
-  TodayIs.innerText = `${parseInt(month) + 1}월 ${date}일 ${
-    nameOfDay[day]
-  }요일`;
+  TodayIs.innerText = `${nameOfMonth[month]}, ${date}, ${nameOfDay[day]}`;
 }
 
 nowClock();

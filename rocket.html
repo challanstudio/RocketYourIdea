@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./asset/img/rocket-2-line.svg"
+      type="image/svg"
+      sizes="any"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/rocket.css" />
+    <title>Rocket</title>
+  </head>
+  <body class="grid_body">
+    <section id="greeting">
+      <div id="greeting_date">
+        <span></span>
+        <span></span>
+      </div>
+      <div id="greeting_username">
+        <h1>
+          Thank you for coming,<br />
+          please enter your name belong.
+        </h1>
+        <form id="form-username" class="hidden" action="">
+          <input
+            id="username"
+            type="text"
+            minlength="2"
+            placeholder="your name + enter"
+            autocomplete="off"
+            required
+          />
+          <input type="submit" value="submit" />
+        </form>
+        <audio
+          src="./asset/effectSound/ES_Multimedia 786 - SFX Producer.mp3"
+          class="hidden"
+          id="sound-enter"
+        ></audio>
+        <form id="form-new-todo" class="hidden" action="">
+          <input
+            id="new-todo"
+            type="text"
+            minlength="2"
+            placeholder="to do list + enter"
+            autocomplete="off"
+            required
+          />
+        </form>
+      </div>
+      <div id="greeting_quotes"><span></span><span></span></div>
+    </section>
+    <section id="contents" class="hidden grid_contents">
+      <div id="todo-list">
+        <h4>To Do List</h4>
+        <ul>
+          <li>eat and sleep <button>x</button></li>
+        </ul>
+      </div>
+      <div id="weather">
+        <h4>Weather</h4>
+        <div id="weather-info">
+          <span id="temp"></span>
+          <div id="temp-iconbox">
+            <span></span>
+          </div>
+        </div>
+        <span id="city"></span>
+      </div>
+      <div id="game">
+        <h4>Game</h4>
+      </div>
+      <div id="music">
+        <h4>Music</h4>
+        <div class="music_img_overlay">
+          <img src="" alt="" />
+        </div>
+
+        <div class="music_btn">
+          <i class="ri-skip-back-fill"></i>
+          <i class="ri-play-fill"></i>
+          <i class="ri-skip-forward-fill"></i>
+        </div>
+        <ul class="music_info">
+          <li id="music-title" class="music_info_title">title</li>
+          <li id="music-artist" class="music_info_artist">artist</li>
+        </ul>
+        <audio id="audio" src=""></audio>
+      </div>
+
+      <div id="fav-link">
+        <h4>Fav Link</h4>
+        <div id="fav-link-wrapper">
+          <form id="fav-link-form">
+            <label for="set-name">Title </label>
+            <input type="text" name="" id="set-name" value="" />
+            <label for="address">Link </label>
+            <input type="text" name="" id="address" value="http://" />
+            <input type="submit" value="submit" />
+          </form>
+          <nav id="fav-link-nav">
+            <p>If you want to delete it, drag it out.</p>
+            <ul></ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/audio.js"></script>
+    <script src="./js/date.js"></script>
+    <script src="./js/greeting.js"></script>
+    <script src="./js/quotes.js"></script>
+    <script src="./js/colors.js"></script>
+    <script src="./js/todo.js"></script>
+    <script src="./js/temp.js"></script>
+    <script src="./js/favlink.js"></script>
+  </body>
+</html>

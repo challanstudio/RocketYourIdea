@@ -1,6 +1,5 @@
 const music = document.getElementById("audio");
 const cover = document.querySelector(".music_img_overlay");
-const lighting = document.querySelector('div[class="music_img_outlines_3"]');
 
 const PLAY_BTN = "ri-play-fill";
 const PAUSE_BTN = "ri-pause-fill";
@@ -11,13 +10,11 @@ const controlMusic = {
     music.play();
     playBtn.className = PAUSE_BTN;
     cover.classList.add("animation_running");
-    lighting.classList.add("animation_running");
   },
   pauseMusic: function () {
     music.pause();
     playBtn.className = PLAY_BTN;
     cover.classList.remove("animation_running");
-    lighting.classList.remove("animation_running");
   },
 };
 
@@ -72,7 +69,7 @@ const player = {
     artist.innerText = musicList.artist;
     title.innerText = musicList.title;
     coverImg.src = `asset/img/${musicList.img}.jpg`;
-    return music.paused ? controlMusic.pauseMusic() : controlMusic.playMusic();
+    return music.played ? controlMusic.playMusic() : controlMusic.pauseMusic();
   },
   autoMusic: function () {
     const musicList = musicInfo[Math.floor(Math.random() * musicInfo.length)];
@@ -100,4 +97,5 @@ function musicPlayer() {
 }
 
 // result
+music.volume = 0.25;
 window.addEventListener("load", musicPlayer);
