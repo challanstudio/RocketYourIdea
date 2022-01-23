@@ -57,8 +57,4 @@ function error() {
   alert("We couldn't find you");
 }
 
-// if (localStorage.getItem("GEO") === null) {
 navigator.geolocation.getCurrentPosition(success, error);
-// } else {
-//   getSavedGeo();
-// }
