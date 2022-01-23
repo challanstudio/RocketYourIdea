@@ -32,6 +32,8 @@ function submitLink(e) {
 function paintLink(elem) {
   const listNode = document.createElement("li");
   const link = document.createElement("a");
+  const soundSubmit = document.querySelector("#sound-submit");
+
   navUl.appendChild(listNode);
   listNode.appendChild(link);
   listNode.id = elem.id;
@@ -39,6 +41,7 @@ function paintLink(elem) {
   link.href = elem.link;
   link.target = "_blank";
   listNode.addEventListener("dragend", deleteLink);
+  soundSubmit.play();
 }
 //"드래그"를 정의, 영역 정의, 해당(주소) 요소를 제외한 나머지 어레이를 재호출
 

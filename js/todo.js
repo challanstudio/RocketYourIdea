@@ -26,6 +26,8 @@ function paintToDo(newToDo) {
   const list = document.createElement("li");
   const span = document.createElement("span");
   const btn = document.createElement("button");
+  const soundSubmit = document.querySelector("#sound-submit");
+
   toDoUl.appendChild(list);
   list.appendChild(span);
   list.appendChild(btn);
@@ -33,6 +35,7 @@ function paintToDo(newToDo) {
   span.innerText = newToDo.text;
   btn.innerText = "x";
   btn.addEventListener("click", deleteToDo);
+  soundSubmit.play();
 }
 
 function deleteToDo(e) {
