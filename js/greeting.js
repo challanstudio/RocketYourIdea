@@ -14,6 +14,8 @@ const now = new Date();
 function onSubmit(e) {
   e.preventDefault();
   const username = inputUserName.value;
+  const soundEnter = document.querySelector("#sound-enter");
+  soundEnter.play();
   localStorage.setItem(KEY_NAME, username);
   showInputTodo(username);
 }
